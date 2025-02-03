@@ -1,7 +1,11 @@
-import superheroesDal from "./superheroes.dal.js";
 import SuperheroesDal from "./superheroes.dal.js";
 
 class SuperheroesController {
+
+  /**
+   * This controller return the sorted array it got from the dal. 
+   */
+
   getSuperheroes = (req, res) => {
     try {
       const result = SuperheroesDal.getSuperheroes();
@@ -12,6 +16,10 @@ class SuperheroesController {
     }
   }
 
+  /**
+   * This controller method gets the data from the front, turns the humility humilityScore
+   * to an int and sends this data to the dal
+   */
   addSuperheroes = (req, res) => {
     let numericHumilityScore = null;
     console.log(req.body);
@@ -36,7 +44,7 @@ class SuperheroesController {
         numericHumilityScore
       }
 
-      superheroesDal.addSuperheroes(dataToDal);
+      SuperheroesDal.addSuperheroes(dataToDal);
       res.status(200).json({msg: "Superhero created correctly"});
     } catch (error) {
       res.status(500).json({ msg: error.message });

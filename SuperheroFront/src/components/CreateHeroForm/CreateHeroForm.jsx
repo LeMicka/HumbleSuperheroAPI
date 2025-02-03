@@ -78,9 +78,9 @@ export const CreateHeroForm = ({getHeroes}) => {
             {msgHumility && <p className="warning-msg">{msgHumility}</p>}
           </Form.Group>
           {msg && <p className="warning-msg">{msg}</p>}
-          <div className="d-flex justify-content-between ">
-            <Button className="button-form" onClick={onSubmit} >Submit</Button>
-            <Button className="button-form" onClick={()=>setHero(initialValue)}>Cancel</Button>
+          <div className="d-flex justify-content-between button-form">
+            <Button  onClick={onSubmit} >Submit</Button>
+            <Button  onClick={()=>setHero(initialValue)}>Cancel</Button>
           </div>
         </Form>
       </Col>

@@ -2,6 +2,10 @@
 let superheroArray = [];
 
 class SuperheroesDal {
+
+  /**
+   * This method returns to the controller the sorted array of superheroes
+   */
   getSuperheroes = () => {
     try {
       superheroArray.sort((hero1, hero2) => {
@@ -14,6 +18,9 @@ class SuperheroesDal {
     }
   }
 
+  /**
+   * This method adds a superhero to the array
+   */
   addSuperheroes = (data) => {
     try {
       const superheroData = {...data , id: superheroArray.length} 
