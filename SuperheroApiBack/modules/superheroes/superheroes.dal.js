@@ -9,7 +9,7 @@ class SuperheroesDal {
   getSuperheroes = () => {
     try {
       superheroArray.sort((hero1, hero2) => {
-        return(hero1.humility - hero2.humility);
+        return(hero1.numericHumilityScore - hero2.numericHumilityScore);
       })
       return superheroArray;
     } catch (error) {

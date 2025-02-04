@@ -34,7 +34,7 @@ class SuperheroesController {
         throw new Error("Your superhero is missing a property (name, superpower, humilityScore)");
       }
       numericHumilityScore = parseInt(humilityScore);
-      if (numericHumilityScore <= 0 || numericHumilityScore > 10){
+      if (numericHumilityScore < 1 || numericHumilityScore > 10){
         throw new Error("The humilityScore has to be a number between 1 and 10");
       }
 

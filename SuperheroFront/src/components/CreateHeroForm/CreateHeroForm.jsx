@@ -20,6 +20,12 @@ export const CreateHeroForm = ({getHeroes}) => {
     setHero({...hero, [name]:value});
   }
 
+  const onCancel = () => {
+    setHero(initialValue);
+    setMsg("");
+    setMsgHumility("");
+  }
+
   const onSubmit = async () => {
     try {
       const {name, superpower, humilityScore} = hero;
@@ -31,6 +37,9 @@ export const CreateHeroForm = ({getHeroes}) => {
       }
       else{
         await fetchData("api/heroes/superheroes", "post", hero);
+        setHero(initialValue);
+        setMsg("");
+        setMsgHumility("");
         getHeroes();
       }
     } catch (error) {
@@ -79,7 +88,7 @@ export const CreateHeroForm = ({getHeroes}) => {
           {msg && <p className="warning-msg">{msg}</p>}
           <div className="d-flex justify-content-between button-form">
             <Button  onClick={onSubmit} >Submit</Button>
-            <Button  onClick={()=>setHero(initialValue)}>Cancel</Button>
+            <Button  onClick={onCancel}>Cancel</Button>
           </div>
         </Form>
       </Col>
