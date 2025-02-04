@@ -19,7 +19,6 @@ export const CreateHeroForm = ({getHeroes}) => {
     const {name, value} = e.target;
     setHero({...hero, [name]:value});
   }
-  console.log(hero);
 
   const onSubmit = async () => {
     try {

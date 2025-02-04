@@ -1,7 +1,6 @@
 import { Card, Col, Row } from 'react-bootstrap';
 
 export const HeroList = ({heroes}) => {
-  console.log(heroes);
   return (
     <>
       <Row className="d-flex flex-wrap justify-content-center gap-2">

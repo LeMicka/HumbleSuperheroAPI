@@ -4,10 +4,11 @@ import { HeroList } from '../../components/HeroList/HeroList';
 import { CreateHeroForm } from '../../components/CreateHeroForm/CreateHeroForm';
 import { Container } from 'react-bootstrap';
 
+import "./frontPage.css"
+
 export const FrontPage = () => {
   const [heroes, setHeroes] = useState();
 
-  console.log(heroes);
 
   const getHeroes = async () => {
     try {
@@ -25,6 +26,9 @@ export const FrontPage = () => {
 
   return (
     <>
+      <section>
+        <h1 className='page-title'>Humble Superhero API</h1>
+      </section>
       <section>
         <Container fluid="xxl" className='mx-auto'>
           <CreateHeroForm getHeroes={getHeroes} />
